@@ -11,4 +11,4 @@ def load_students():
             students.clear()
             students.extend(json.load(f))
     except FileNotFoundError:
-        students = []
+        students.clear()

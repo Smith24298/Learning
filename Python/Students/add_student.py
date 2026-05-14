@@ -17,6 +17,10 @@ def add_student():
         "state": "AnyState"
         }
     if flag == 1:
+        # prevent duplicate roll_no for demo student
+        if any(s.get("roll_no") == Student_demo["roll_no"] for s in students):
+            print("Error: Duplicate roll number. Demo student not added.")
+            return
         students.append(Student_demo)
         save_students()
         print("Demo Student Added Successfully")
@@ -26,6 +30,10 @@ def add_student():
         name = input("Enter Student Name: ")
         age = int(input("Enter Student Age: "))
         roll_no = int(input("Enter Student Roll No: "))
+        # prevent duplicate roll numbers
+        if any(s.get("roll_no") == roll_no for s in students):
+            print("Error: Duplicate roll number. Student not added.")
+            return
         mobile_no = int(input("Enter Student Mobile No: "))
         parents_mobile_no = int(input("Enter Student Parents Mobile No: "))
         Address = input("Enter Student Address: ")
