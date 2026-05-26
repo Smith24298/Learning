@@ -281,3 +281,15 @@ send() --> to send a value to the generator and it will be returned by the yield
 throw() --> to raise an exception inside the generator
 """
 
+"""
+my_list = [1, 2, 3, 4, 5]
+
+ite = iter(my_list) # it will return an iterator object that can be used to iterate over the list
+
+print(next(ite)) # it will return the next value from the iterator
+print(next(ite))
+print(next(ite))
+print(next(ite))
+print(next(ite)) # it will raise the error of StopIteration because there are no more values to iterate over
+
+"""
